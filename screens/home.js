@@ -26,25 +26,22 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Your home screen content</Text>
-      <TouchableOpacity onPress={() => setDrawerVisible(true)}>
-        <View style={styles.button}>
-          <AntDesign name="exclamationcircleo" size={24} color="black" />
-          <Text>Open Drawer</Text>
-        </View>
+      <TouchableOpacity onPress={() => setDrawerVisible(true)} style={styles.drawerButton}>
+        <AntDesign name="exclamationcircleo" size={40} color="black" />
       </TouchableOpacity>
 
       <Modal visible={isDrawerVisible} transparent={true}>
         <View style={styles.modalContainer}>
           <Animated.View style={[styles.customDrawer, { transform: [{ translateX: slideAnimation }] }]}>
             <CustomDrawer onClose={() => setDrawerVisible(false)} />
+
+            <TouchableOpacity
+              style={styles.closeButtonContainer}
+              onPress={() => setDrawerVisible(false)}
+            >
+              <Entypo name="circle-with-cross" size={40} color="black" />
+            </TouchableOpacity>
           </Animated.View>
-          <TouchableOpacity
-            style={styles.closeButtonContainer}
-            onPress={() => setDrawerVisible(false)}
-          >
-            <Entypo name="circle-with-cross" size={24} color="black" />
-          </TouchableOpacity>
         </View>
       </Modal>
     </View>
@@ -54,12 +51,11 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  button: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  drawerButton: {
+    position: 'absolute',
+    top: 50, // Adjust the top position of !
+    right: 30, // Adjust the right position of !
   },
   modalContainer: {
     flex: 1,
@@ -72,9 +68,9 @@ const styles = StyleSheet.create({
   },
   closeButtonContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
+    position: 'absolute',
+    top: 50, // Adjust the top position of !
+    right: 250, // Adjust the right position of !
   },
 });
 
