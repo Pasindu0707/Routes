@@ -1,4 +1,4 @@
-import { View, Text ,Button} from 'react-native'
+import { View, Text ,Button,TouchableOpacity,StyleSheet} from 'react-native'
 import React from 'react'
 import Favourites from './Favourites'
 import { useNavigation } from '@react-navigation/native';
@@ -12,7 +12,7 @@ const MyList = () => {
 
 
   return (
-    <TouchableOpacity onPress={navigateTofavourites} style= {Styles.buttonProfile}>
+    <TouchableOpacity onPress={navigateTofavourites} style={{position:'relative',paddingTop:100}}>
       <Text>My Favourites</Text>
     </TouchableOpacity>
   )
