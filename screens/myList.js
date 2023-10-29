@@ -4,11 +4,11 @@ import Favourites from './Favourites'
 
 const MyList = () => {
 
-  
+
 
   return (
     <View>
-      <Button onPress={()=>Favourites} ></Button>
+      <Button onPress={()=>Favourites}  ></Button>
     </View>
   )
 }
