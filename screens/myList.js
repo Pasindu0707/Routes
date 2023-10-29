@@ -3,13 +3,16 @@ import React from 'react'
 import Favourites from './Favourites'
 
 const MyList = () => {
-
+  
+  const navigateTofavourites = ()=>{
+    navigation.navigate('Favourites')
+  }
 
 
   return (
-    <View>
-      <Button onPress={()=>Favourites}  ></Button>
-    </View>
+    <TouchableOpacity onPress={navigateTofavourites} style= {Styles.buttonProfile}>
+      <Text>My Favourites</Text>
+    </TouchableOpacity>
   )
 }
 
