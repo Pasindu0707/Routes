@@ -1,10 +1,14 @@
-import { View, Text } from 'react-native'
+import { View, Text ,Button} from 'react-native'
 import React from 'react'
+import Favourites from './Favourites'
 
 const MyList = () => {
+
+
+
   return (
     <View>
-      <Text>MyList</Text>
+      <Button onPress={()=>Favourites}  ></Button>
     </View>
   )
 }
