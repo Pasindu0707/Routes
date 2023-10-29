@@ -1,9 +1,11 @@
 import { View, Text ,Button} from 'react-native'
 import React from 'react'
 import Favourites from './Favourites'
+import { useNavigation } from '@react-navigation/native';
 
 const MyList = () => {
-  
+  const navigation = useNavigation();
+
   const navigateTofavourites = ()=>{
     navigation.navigate('Favourites')
   }
